@@ -1,11 +1,10 @@
 # automacao-ERP
 
-## Demonstração da automação
+## Demonstração da automação no ERP Tecnobyte SAC
+![Demonstração da automação](gif-auto.gif)
 
 
-Automação de ERP - Tecnobyte SAC
-
-Descrição:
+## Descrição:
 Este script realiza a automação de tarefas no ERP Tecnobyte SAC. A automação inclui:
 1. Abrir o programa.
 2. Realizar login.

@@ -1,7 +1,7 @@
 # automacao-ERP
 
 ## Demonstração da automação no ERP Tecnobyte SAC
-![Demonstração da automação](gif-auto.gif)
+![Demonstração da automação](gif4.gif.gif)
 
 
 ## Descrição

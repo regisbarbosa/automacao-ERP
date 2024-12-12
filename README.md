@@ -4,7 +4,7 @@
 ![Demonstração da automação](gif-auto.gif)
 
 
-## Descrição:
+## Descrição
 Este script realiza a automação de tarefas no ERP Tecnobyte SAC. A automação inclui:
 1. Abrir o programa.
 2. Realizar login.
@@ -36,13 +36,16 @@ import subprocess
 import time
 ```
 
-## Configuração de segurança:
+## Interromper a automação
  Permite interromper o script movendo o mouse para uma das extremidades da tela
 ```
 pyautogui.FAILSAFE = True
 ```
 
-## Função para localizar uma imagem na tela
+## Função para reconhecer uma imagem
+- O parâmetro grayscale=True reduz a complexidade do reconhecimento.
+- O parâmetro confidence=0.9 define o nível de similaridade necessário para considerar uma correspondência válida.
+
 ```
 def encontrar_imagem(imagem):
     while not pyautogui.locateOnScreen(imagem, grayscale=True, confidence=0.9):  # reconhecimento de imagem
@@ -53,13 +56,13 @@ def encontrar_imagem(imagem):
 ### Passo 1
 
 ```
-# Abrir o ERP Tecnobyte Sac:
+# Abrir o ERP Tecnobyte Sac
 subprocess.Popen([r"C:\Tecnobyte\SAC_Free\SAC.exe"])
 time.sleep(3) # Aguarda o programa abrir
 ```
 ### Passo 2
 ```
-# Realizar login:
+# Realizar login
 pyautogui.press('tab') # Navegar até o campo de senha
 pyautogui.write('12345') # Digitar a senha
 pyautogui.press('enter') # Confirmar o login
@@ -90,6 +93,7 @@ time.sleep(1)
 encontrou = encontrar_imagem('salvar.png')
 pyautogui.click(encontrou)
 time.sleep(1)
+
 # Renomear o arquivo para "Estoque Sintetico"
 pyautogui.write('Estoque Sintetico')
 time.sleep(1)
@@ -107,7 +111,8 @@ time.sleep(2)
 encontrou = encontrar_imagem('salvar_arquivo_texto.png')
 pyautogui.click(encontrou)
 ```
-## Considerações finais:
+
+## Considerações finais
 - Este script pode ser adaptado para salvar arquivos em outros formatos ou locais, modificando as interações com a interface do ERP.
 
 - Certifique-se de que as imagens utilizadas para o reconhecimento estejam atualizadas e correspondam aos elementos na tela.
